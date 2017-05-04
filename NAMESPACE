@@ -92,6 +92,7 @@ export(
 	col2idx,
 	cref2idx,
 	extractSheetName,
+	forcePivotTableRefresh,
 	idx2aref,
 	idx2col,
 	idx2cref,
