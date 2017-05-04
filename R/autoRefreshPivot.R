@@ -1,9 +1,7 @@
-# This file contains other utilities to make this a more useful package
-
 # If you have an Excel file template and use xlsx to fill in some data and write
 # it back to a file (which is a general technique to produce Excel-based reports), 
 # then it works beautifully except that Excel will not refresh pivot tables 
-# when you open the file.  
+# when you open the file.  Call it a feature or bug, whatever you want!
 #
 # It turns out that Excel can refresh pivot tables when you open the file if the 
 # pivot cache definition XML file has the refreshOnLoad flag set to 1.
@@ -11,8 +9,11 @@
 #
 # This method automates the hack.  Basically, unzip the excel file, update
 # the pivot cache definition files and writes it back.  It's really a hack.
-# This hack should be temporary when apache-poi eventually allows adding the 
-# refreshOnLoad attribute for existing pivot tables in the workbook.
+# This hack should be temporary if apache-poi eventually implements the 
+# ability to change the refreshOnLoad attribute for existing pivot tables 
+# in the workbook.
+#
+# Author: Tom Kwong <tk3369@gmail.com>
 #
 forcePivotTableRefresh <- function(file, output=NULL, verbose=TRUE) {
   
